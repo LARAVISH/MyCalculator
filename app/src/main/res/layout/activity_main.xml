@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/constrain_layout">
+    <include layout="@layout/grid_layout">
 
     </include>
 
