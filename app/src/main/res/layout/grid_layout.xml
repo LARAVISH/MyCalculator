@@ -4,19 +4,25 @@
     android:layout_height="match_parent"
     android:background="@color/purple_500">
 
-    <EditText
-        android:id="@+id/calculate"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:background="@color/white"
-        android:hint="@string/hint_name"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textColorHint="#78909C"
-        android:textSize="@dimen/size_edit_text" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/calculate"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:hint="@string/hint_name"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textColorHint="#78909C"
+            android:textSize="@dimen/size_edit_text" />
+    </LinearLayout>
 
     <GridLayout
         android:layout_width="wrap_content"
