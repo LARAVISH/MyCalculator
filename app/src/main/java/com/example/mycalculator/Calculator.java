@@ -9,13 +9,13 @@ public class Calculator {
     private boolean dotInsert;
 
     public Calculator() {
-        state = State.firstStat;
+        state = State.FIRST_STAT;
         builder = new StringBuilder();
     }
 
     public void pressButtonNumber(int idButton) {
-        if (state == State.showResultState) {
-            state = State.firstStat;
+        if (state == State.SHOW_RESULT_STATE) {
+            state = State.FIRST_STAT;
         }
         if (builder.length() < 10) {
             switch (idButton) {
@@ -55,9 +55,9 @@ public class Calculator {
     }
 
     public void pressButtonOperation(int idButton) {
-        if (idButton == R.id.btn_equal && state == State.secondState) {
+        if (idButton == R.id.btn_equal && state == State.SECOND_STATE) {
             float secondNumber = Float.parseFloat(builder.toString());
-            state = State.showResultState;
+            state = State.SHOW_RESULT_STATE;
             builder.setLength(0);
             switch (actionSelected) {
                 case R.id.btn_plus:
@@ -76,9 +76,9 @@ public class Calculator {
 
             }
 
-        } else if (builder.length() > 0 && state == State.firstStat) {
+        } else if (builder.length() > 0 && state == State.FIRST_STAT) {
             firstNumber = Float.parseFloat(builder.toString());
-            state = State.secondState;
+            state = State.SECOND_STATE;
             builder.setLength(0);
         }
 
@@ -100,7 +100,7 @@ public class Calculator {
     }
 
     public void presClear() {
-        state = State.firstStat;
+        state = State.FIRST_STAT;
         builder.setLength(0);
 
     }
@@ -115,7 +115,7 @@ public class Calculator {
         if (builder.length() == 0) {
             builder.append("0.");
             dotInsert = true;
-        } else if (!dotInsert || state == State.secondState) {
+        } else if (!dotInsert || state == State.SECOND_STATE) {
             builder.append(".");
             dotInsert = true;
         }
@@ -126,9 +126,9 @@ public class Calculator {
     }
 
     private enum State {
-        firstStat,
-        secondState,
-        showResultState
+        FIRST_STAT,
+        SECOND_STATE,
+        SHOW_RESULT_STATE
     }
 
 }
