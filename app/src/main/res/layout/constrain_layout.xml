@@ -3,279 +3,227 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/purple_500">
+    android:layout_height="match_parent">
 
-
-    <EditText
-        android:id="@+id/calculate"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        android:hint="@string/hint_name"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textColorHint="#78909C"
-        android:textSize="@dimen/size_edit_text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        android:textColorHint="@color/text_color_hint"
-        android:textSize="@dimen/size_edit_text"
-        app:layout_constraintBottom_toTopOf="@id/btn_clear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculate" />
+        <com.google.android.material.textfield.TextInputEditText
 
-    <Button
+            android:id="@+id/calculate"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="@dimen/layout_margin_start"
+            android:layout_marginTop="@dimen/layout_margin_top"
+            android:layout_marginEnd="@dimen/layout_margin_end"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_clear"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_clear"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_8"
         app:layout_constraintEnd_toEndOf="@id/btn_8"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_backspace"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/layout_margin_end"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:contentDescription="@string/btn_content_descript"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_baseline_arrow_right_24"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
+        app:icon="@drawable/ic_baseline_arrow_right_24"
         app:layout_constraintBottom_toTopOf="@id/btn_9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btn_9"
-        app:layout_constraintTop_toTopOf="@+id/btn_clear" />
+        app:layout_constraintTop_toTopOf="@+id/btn_clear"
+        app:layout_constraintVertical_weight="@+id/btn_clear" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_7"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_4"
         app:layout_constraintEnd_toStartOf="@+id/btn_8"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_8"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_5"
         app:layout_constraintEnd_toStartOf="@+id/btn_9"
         app:layout_constraintStart_toEndOf="@+id/btn_7"
         app:layout_constraintTop_toTopOf="@+id/btn_7" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_9"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_6"
         app:layout_constraintEnd_toStartOf="@+id/btn_divide"
         app:layout_constraintStart_toEndOf="@+id/btn_8"
         app:layout_constraintTop_toTopOf="@+id/btn_8" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_divide"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginEnd="@dimen/layout_margin_end"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_divide"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btn_multi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_9"
         app:layout_constraintTop_toTopOf="@id/btn_9" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_4"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_1"
         app:layout_constraintEnd_toStartOf="@+id/btn_5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_5"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_2"
         app:layout_constraintEnd_toStartOf="@+id/btn_6"
         app:layout_constraintStart_toEndOf="@id/btn_4"
         app:layout_constraintTop_toBottomOf="@+id/btn_8"
         app:layout_constraintTop_toTopOf="@id/btn_4" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_6"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btn_multi"
         app:layout_constraintStart_toEndOf="@+id/btn_5"
         app:layout_constraintTop_toBottomOf="@id/btn_9"
         app:layout_constraintTop_toTopOf="@id/btn_5"
         tools:ignore="TextContrastCheck" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_multi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginEnd="@dimen/layout_margin_end"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_multiply"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_minus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_6"
         app:layout_constraintTop_toBottomOf="@id/btn_divide"
         app:layout_constraintTop_toTopOf="@id/btn_6" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_1"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_0"
         app:layout_constraintEnd_toStartOf="@+id/btn_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_2"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_point"
         app:layout_constraintEnd_toStartOf="@+id/btn_3"
         app:layout_constraintStart_toEndOf="@id/btn_1"
         app:layout_constraintTop_toBottomOf="@+id/btn_5"
         app:layout_constraintTop_toTopOf="@id/btn_1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_3"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_equal"
         app:layout_constraintEnd_toStartOf="@+id/btn_minus"
         app:layout_constraintStart_toEndOf="@+id/btn_2"
         app:layout_constraintTop_toBottomOf="@id/btn_6"
         app:layout_constraintTop_toTopOf="@id/btn_2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_minus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginEnd="@dimen/layout_margin_end"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/brn_minus"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btn_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_3"
         app:layout_constraintTop_toBottomOf="@id/btn_multi"
         app:layout_constraintTop_toTopOf="@id/btn_3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_0"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toStartOf="@+id/btn_point"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_point"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/brn_point"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toStartOf="@+id/btn_equal"
         app:layout_constraintStart_toEndOf="@id/btn_0"
@@ -283,31 +231,28 @@
         app:layout_constraintTop_toTopOf="@id/btn_0"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_equal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue_1"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_equal"
-        android:textColor="@color/black"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
+        style="@style/CalcButton.Action"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toStartOf="@+id/btn_plus"
         app:layout_constraintStart_toEndOf="@+id/btn_point"
         app:layout_constraintTop_toBottomOf="@id/btn_3"
         app:layout_constraintTop_toTopOf="@+id/btn_point" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_plus"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/layout_margin_start"
+        android:layout_marginEnd="@dimen/layout_margin_end"
+        android:layout_marginBottom="@dimen/layout_margin_bottom"
         android:text="@string/btn_plus"
-        android:textColor="@color/white"
-        android:textSize="@dimen/size_button"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_equal"
@@ -316,7 +261,7 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:contentDescription="@string/content_descript"
         android:scaleType="centerInside"
