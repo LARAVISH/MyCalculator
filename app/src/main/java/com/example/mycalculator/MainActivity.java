@@ -1,10 +1,17 @@
 package com.example.mycalculator;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.storage.Theme;
+import com.example.storage.ThemeStorage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +22,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        ThemeStorage themeStorage = ThemeStorage.getInstance(getApplicationContext());
+        Theme saveTheme = themeStorage.getTheme();
+
+        ActivityResultLauncher<Intent> launcher = registerForActivityResult
+                (new ActivityResultContracts.StartActivityForResult(), result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent date = result.getData();
+                        assert date != null;
+                        Theme chosenTheme = (Theme) date.getSerializableExtra(SelectedThemeActivity.CHOSEN_THEME);
+                        themeStorage.saveTheme(chosenTheme);
+                        recreate();
+                    }
+                });
+
+        setTheme(saveTheme.getStyle());
+
+
+        setContentView(R.layout.constrain_layout);
+
         calculator = new Calculator();
         text = findViewById(R.id.calculate);
 
@@ -73,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_point).setOnClickListener(view -> {
             calculator.pressPoint();
             text.setText(calculator.getText());
+        });
+
+        findViewById(R.id.image_dr).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, SelectedThemeActivity.class);
+            intent.putExtra(SelectedThemeActivity.SELECTED_THEME, saveTheme);
+            launcher.launch(intent);
         });
 
     }

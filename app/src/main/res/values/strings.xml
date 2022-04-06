@@ -20,5 +20,7 @@
     <string name="btn_equal">=</string>
     <string name="btn_plus">+</string>
     <string name="content_descript">painting</string>
+    <string name="theme_one">THEME ONE</string>
+    <string name="theme_two">THEME TWO</string>
 
 </resources>
