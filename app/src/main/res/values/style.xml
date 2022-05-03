@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CalcButton">
+        <item name="cornerRadius">@dimen/cornerRadius</item>
+        <item name="android:textSize">@dimen/size_text_button</item>
+        <item name="backgroundTint">@color/back_tint_button</item>
+        <item name="fontFamily">@font/caveart_bold</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalcButton.Action">
+        <item name="actionButtonColor">?actionButtonColor</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/size_edit_text</item>
+        <item name="android:hint">@string/hint_name</item>
+
+    </style>
+
+    <style name="CalcButton.V2">
+        <item name="backgroundTint">@color/blue_1</item>
+        <item name="actionButtonColor">?actionButtonColor</item>
+    </style>
+
+</resources>
